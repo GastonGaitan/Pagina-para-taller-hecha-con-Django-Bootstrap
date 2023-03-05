@@ -1,0 +1,75 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+{% block title %} Nuestros vehiculos {% endblock %}
+
+{% block content %}
+
+<style>
+    .card .img-fit {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .card {
+        height: 100%;
+    }
+
+    .card-body {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .card-text {
+        flex-grow: 1;
+    }
+
+    @media (max-widt: 767.98px) {
+        .card.card .img-fit{
+            aspect-ratio: 1.45 / 1;
+        }
+    }
+
+    
+</style>
+<div class="jumbotron text-center" style="margin-top: 70px;">
+        <h1 class="display-3">Venta de automotores</h1>
+        <p class="lead"><strong>Haga click para contactarse directamente desde whatsapp web o llamenos al +44444444 especificando el modelo del que quiere mas detalles.</strong></p>
+        <hr>
+    </div>
+  <div class="container" style="padding-top: 50px; padding-bottom: 50px;padding-left: 50px;">
+        {% for auto in autos %}
+        {% if forloop.first %}<div class="row">{% endif %}
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card" style="width: 18rem;display: flex; flex-direction: column;">
+                    <img src="{{ auto.image.url }}" class="card-img-top img-fit" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ auto.marca }} {{ auto.modelo }} {{ auto.anio }}</h3>
+                        <h6>{{ auto.kilometros }}km</h6>
+                        <p class="card-text">{{ auto.descripcion }}</p>
+                        {% if auto.disponible == True %}
+                            <p><strong>Precio: U$S</strong> {{ auto.precio }}</p>
+                            <a href="https://wa.me/5493487235569" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Contactarse</a>
+                        {% else %}
+                            <a href="#" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto; background-color: red;">No disponible</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row" style="margin-top: 100px;">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="jumbotron text-center" style="margin-top: 10px">
+        <p class="lead"><strong>Haga click para contactarse directamente desde whatsapp web o llamenos al +44444444 especificando el modelo del que quiere mas detalles.</strong></p>
+    </div>
+    <div class="button-container" style="margin-top: 0; margin-bottom: 100px;">
+        <a href="/"><button class="btn-primary">Volver al inicio.</button></a>
+    </div>
+    
+</div>
+
+{% endblock %}

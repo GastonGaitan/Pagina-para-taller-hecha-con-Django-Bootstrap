@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taller Capdedo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href=" {% static 'style.css' %} ">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#">CS Taller</a>
+      </div>
+      <div class="toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div class="banner">
+            <img class="low-opacity-bg-image" src=" {% static 'descarga.jpg' %} " alt="img">
+            <div class="heading">
+                <h1>Mantenimiento y venta de vehiculos.</h1>
+                <p>Nos preocupamos por tu auto mas que vos.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="my-div">
+    <div class="button-container">
+      <button class="btn-primary">Nuestros servicios</button>
+      <button class="btn-secondary">Venta de vehiculos</button>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>

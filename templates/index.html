@@ -1,0 +1,27 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+  
+    <div class="row">
+        <div class="banner" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <img class="low-opacity-bg-image" src=" {% static 'descarga.jpg' %} " alt="img" style="height: 450px;">
+            <div class="heading">
+                <h1>Taller CS</h1>
+                <h1>Mantenimiento y venta de vehiculos.</h1>
+                <p>Nos preocupamos por tu auto mas que vos.</p>
+            </div>
+        </div>
+    </div>
+
+  <div class="my-div">
+    <div class="button-container">
+      <a href="/serviciosVenta/servicios/"><button class="btn-primary">Nuestros servicios</button></a>
+      <a href="/serviciosVenta/venta/"><button class="btn-secondary">Venta de vehiculos</button></a>
+    </div>
+  </div>
+  {% endblock %}
+ 

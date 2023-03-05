@@ -1,0 +1,36 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+{% block title %} Servicios {% endblock %}
+
+{% block content %}
+
+
+<div class="jumbotron text-center" style="margin-top: 70px;">
+  <h1 class="display-3">Nuestros servicios</h1>
+  <p class="lead"><strong>Haga click para contactarse directamente desde whatsapp web o llamenos al +44444444 especificando el servicio.</strong></p>
+  <hr>
+</div>
+  </div>
+<div class="container">
+  <div class="row">
+    {% for servicio in servicios %}
+      <h1>{{ servicio.nombre }}</h1>
+      <h5>{{ servicio.descripcion }}</h5>
+      {% if servicio.precio == 0 %}
+        <p><strong>Coste minimo:</strong> A coordinar.</p>
+      {% else %}
+        <p><strong>Coste minimo: $</strong> {{ servicio.precio }} (pesos)</p>
+      {% endif %}
+      <a href="https://wa.me/5493487235569" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto; width: auto; margin-bottom: 20px;">Contactarse</a>
+      <hr>
+    {% endfor %}
+  </div>
+</div>
+<hr>
+    <div class="button-container" style="margin-top: 0; margin-bottom: 100px;">
+        <a href="/"><button class="btn-primary">Volver al inicio.</button></a>
+    </div>
+  
+{% endblock %}
